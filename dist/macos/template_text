@@ -1,0 +1,50 @@
+# How to Use
+Hi and welcome!
+
+You can modify anything in this file. This includes the wording under `## Template` or under any other section.
+
+If you would like to add a new section, you can add it to this file.
+1. Add a new section by creating a heading beginning with `## `, e.g. `## New Section`.
+2. Add the options to the newly added section in this format: 
+1: This is some sample text
+b: We can use whatever we want on the left of the semicolon; note it says "b".
+3. Update the text under the `## Template` section to include the newly created section.
+This might look something like: This is my new section {New Section}
+4. Save the file and run Alicia's Toolbox.
+
+For new versions:
+
+
+## Template
+Dear {Student},
+
+Well done on the delivery of your individual content during the {Team Name} pitch. It is suggested you watch back the recording to note these features to make a goal for your next verbal presentation.
+
+Within the presentation you {Body Language}, {Voice} & {Speed}. To engage the audience {Interactions} and overall {Recall}.
+
+Further within the Q&A {Q&A}.
+
+Your hard work on developing this skill is noted, and I wish you all the best in your next pitch!
+
+Best, {Tutor}
+
+## Body Language
+1: You engaged the panel audience clearly with gestures and eye contact when explaining key points.
+2: You moved your body to demonstrate confidence in your ideas.
+3: You referred to the slides at times to help direct the audience where to focus to reinforce your point.
+
+## Voice
+1: Your tone of voice was engaging and undulated as you emphasised key features.
+2: Your volume was audible for most people in the room. Consider varying your tone for greater emphasis in key areas.
+
+## Speed
+1: You spoke clearly and allowed space in between words for key points to land for the audience.
+
+## Interactions
+1: You asked a question of the audience to gauge their reaction.
+
+## Recall
+1: You spoke from memory thus prolonging the periods of speaking directly to the audience.
+
+## Q&A
+1: You offered ideas spontaneously in response to their questions.

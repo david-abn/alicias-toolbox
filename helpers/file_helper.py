@@ -26,8 +26,6 @@ def get_lines():
 
 def write_template_file(template_content, student):
     filename = generate_filename(student)
-    # script_dir = os.path.dirname(os.path.abspath(__file__))
-    # relative_path = os.path.join(script_dir, "template_output")
     relative_path = "template_output"
     
     full_path = os.path.join(relative_path, filename)
@@ -37,6 +35,6 @@ def write_template_file(template_content, student):
         
         with open(full_path, 'w') as file:
             file.write(template_content)
-        logger.info(f"Template file '{filename}' created successfully.")
+        logger.info(f"Template file '{full_path}' created successfully.")
     except IOError as e:
         logger.error(f"Error writing to file '{filename}': {e}")
