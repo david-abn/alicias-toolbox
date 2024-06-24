@@ -2,6 +2,8 @@ import time
 import os
 import sys
 
+import click
+
 from helpers.logger_helper import get_logger
 
 logger = get_logger(__name__)
@@ -11,19 +13,42 @@ def generate_filename(student) -> str:
     filename = f"output_{student}_{timestamp}.txt"
     return filename
 
-def get_lines():
+def get_cwd():
     if getattr(sys, 'frozen', False):
         # Running as a standalone executable
         cwd = os.path.dirname(sys.executable)
     else:
         # Running as a script
         cwd = os.getcwd()
-    
-    template_file_path = os.path.join(cwd, 'template_text')
-    with open(template_file_path, 'r') as file:
-        lines = file.readlines()
-        return lines
+    return cwd
 
+
+def get_lines():
+    cwd = get_cwd()
+    template_file_name = 'template_text'
+    
+    template_file_path = os.path.join(cwd, template_file_name)
+    template_file_path_with_txt = os.path.join(cwd, f"{template_file_name}.txt")
+    
+    def open_template_file(path):
+        try: 
+            with open(path, 'r') as file:
+                lines = file.readlines()
+                return lines
+        except FileNotFoundError:
+            return None
+    
+    template_contents = open_template_file(template_file_path)
+    if template_contents is None:
+        template_contents = open_template_file(template_file_path_with_txt)
+    
+    if template_contents:
+        return template_contents
+    else:
+        logger.error("Unable to open template contents file.")
+        click.pause("Failed to run script. Please check the template_text file is in the same folder as alicias-toolbox app and try again...")
+        raise FileNotFoundError
+    
 def write_template_file(template_content, student):
     filename = generate_filename(student)
     relative_path = "template_output"
